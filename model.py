@@ -100,8 +100,18 @@ def add_bias_column(X):
     X = np.hstack([b_col, X])
     return X
 
-# Step 10 - make_shuffled_indices (not yet solved)
-# TODO: implement
+# Step 10 - make_shuffled_indices
+import numpy as np
+
+def make_shuffled_indices(n_samples, seed):
+    # 1. On crée le générateur aléatoire avec la graine (seed) pour la reproductibilité
+    rng = np.random.RandomState(seed)
+    
+    # 2. On génère directement la permutation des indices de 0 à n_samples - 1
+    indices_melanges = rng.permutation(n_samples)
+    
+    # 3. On retourne les indices sous forme de liste (ou enlevez .tolist() si vous voulez garder un tableau NumPy)
+    return indices_melanges
 
 # Step 11 - partition_indices (not yet solved)
 # TODO: implement
