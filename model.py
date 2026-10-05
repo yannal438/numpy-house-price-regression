@@ -180,8 +180,26 @@ def root_mean_squared_error(y_true, y_pred):
 
     pass
 
-# Step 17 - r_squared (not yet solved)
-# TODO: implement
+# Step 17 - r_squared
+import math
+import numpy as np
+def r_squared(y_true, y_pred):
+    # TODO: Compute R^2 = 1 - SS_res/SS_tot (return 0.0 if SS_tot is 0)...
+    # Convert both inputs to arrays if neeeded and xork with shape(N,)
+    y_true = np.asarray(y_true, dtype=np.float64).flatten()
+    y_pred = np.asarray(y_pred, dtype=np.float64).flatten()
+    # Calcul du SSRES
+    erreur_1 = (y_true - y_pred)**2
+    SSRES = np.sum(erreur_1)
+    # Calcul du SSTOT
+    erreur_2 = (y_true - (y_true).mean())**2
+    SSTOT = np.sum(erreur_2)
+
+    if SSTOT == 0:
+        return 0.0
+    else:
+        R2 = 1.0 - (SSRES/SSTOT)
+    return R2
 
 # Step 18 - residual_summary (not yet solved)
 # TODO: implement
