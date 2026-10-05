@@ -201,8 +201,22 @@ def r_squared(y_true, y_pred):
         R2 = 1.0 - (SSRES/SSTOT)
     return R2
 
-# Step 18 - residual_summary (not yet solved)
-# TODO: implement
+# Step 18 - residual_summary
+import numpy as np
+import math
+def residual_summary(y_true, y_pred):
+    # TODO: Return a compact dict summarizing prediction residuals..
+    y_true = np.asarray(y_true)
+    y_pred = np.asarray(y_pred)
+
+    r = y_true - y_pred
+    mean = np.mean(r)
+    mean = float(mean)
+    std = np.std(r)
+    std = float(std)
+    median_ab = np.abs(r)
+    median_abs = float(np.median(median_ab))
+    return {'mean':mean, 'std':std, 'median_abs':median_abs}
 
 # Step 19 - prepare_cleaned_features (not yet solved)
 # TODO: implement
