@@ -150,8 +150,14 @@ def ols_predict(X, theta):
     theta = np.asarray(theta, dtype=np.float64).flatten()
     return np.dot(X , theta)
 
-# Step 15 - mean_absolute_error (not yet solved)
-# TODO: implement
+# Step 15 - mean_absolute_error
+import math
+import numpy as np
+def mean_absolute_error(y_true, y_pred):
+    # TODO: return the mean absolute error between targets and predictions
+    erreur = y_pred - y_true
+    MAE = np.mean(abs(erreur))
+    return float(MAE)
 
 # Step 16 - root_mean_squared_error (not yet solved)
 # TODO: implement
