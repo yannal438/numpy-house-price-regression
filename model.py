@@ -308,7 +308,6 @@ def house_price_pipeline(X, y, ratio_num_idx, ratio_den_idx, cat_labels=None, tr
     # 4. Standardize splits and prepend a bias column
     std_splits, _, _ = standardize_and_add_bias(splits)
     
-    # 🌟 CORRECTION : Définition interne avec indentation correcte pour ses lignes intérieures
     def ols_fit_internal(X_matrix, y_vector):
         theta_val, _, _, _ = np.linalg.lstsq(X_matrix, y_vector, rcond=None)
         return theta_val
